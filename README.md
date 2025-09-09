@@ -1,2 +1,2 @@
-# Game_Image_Recognition
-Game recognition from screenshots or photos.
+# Video Game Image Recognition
+Recognize video games from a photo automatically.
