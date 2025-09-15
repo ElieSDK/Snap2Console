@@ -12,6 +12,12 @@ DATA_DIR = "/home/es/Documents/Project/VG/Medias/Nintendo Famicom (2D Boxes)(Kon
 IMG_SIZE = 256  # EfficientNet-B2 compatible
 
 # Organize images into folders
+'''
+Example of filename:
+GB_Tetris.jpg  
+SFC_Tetris.jpg  
+NES_Mario.jpg 
+'''
 for file_path in glob.glob(os.path.join(DATA_DIR, '*.*')):
     base_name = os.path.splitext(os.path.basename(file_path))[0]
     new_dir = os.path.join(DATA_DIR, base_name)
@@ -104,3 +110,8 @@ if img is not None:
     print("Predicted game:", pred_class)
 else:
     print(f"Image not found: {img_path}")
+
+
+
+
+# EfficientNet-B2
