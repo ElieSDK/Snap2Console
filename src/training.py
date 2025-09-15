@@ -47,8 +47,8 @@ for cls_name in classes:
 images = np.array(images) / 255.0 # Normalize
 labels = np.array(labels)
 
-# Train/Validation split
-train_images, val_images, train_labels, val_labels = train_test_split(
+# Train/Test split
+train_images, test_images, train_labels, test_labels = train_test_split(
     images, labels, test_size=0.2, random_state=0, stratify=labels
 )
 
@@ -75,7 +75,7 @@ model.summary()
 # Checkpoint
 checkpoint = ModelCheckpoint(
     'best_model.h5',
-    monitor='val_accuracy', # track validation accuracy
+    monitor='accuracy',
     save_best_only=True,
     mode='max',
     verbose=1
@@ -84,17 +84,16 @@ checkpoint = ModelCheckpoint(
 # Train model
 history = model.fit(
     train_images, train_labels,
-    validation_data=(val_images, val_labels),
     epochs=15,
     batch_size=32,
-    callbacks=[checkpoint]
+    callbacks=[checkpoint]  # checkpoint will now save based on training metrics
 )
 
-# Load and evaluate best model
+# Load and evaluate best model on the test set
 best_model = load_model('best_model.h5')
-val_loss, val_acc = best_model.evaluate(val_images, val_labels)
-print("Best Validation loss:", val_loss)
-print("Best Validation accuracy:", val_acc)
+test_loss, test_acc = best_model.evaluate(test_images, test_labels)
+print("Test loss:", test_loss)
+print("Test accuracy:", test_acc)
 
 # Predict
 img_path = "test_cover.jpg"
