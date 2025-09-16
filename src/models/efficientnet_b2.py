@@ -56,4 +56,22 @@ train_images, test_images, train_labels, test_labels = train_test_split(
     images, labels, test_size=0.2, random_state=0, stratify=labels
 )
 
+#EfficientNet-B2
+num_classes = len(classes)
 
+base_model = EfficientNetB2(weights="imagenet", include_top=False,
+                            input_shape=(IMG_SIZE, IMG_SIZE, 3))
+base_model.trainable = False  # freeze base layers
+
+x = base_model.output
+x = GlobalAveragePooling2D()(x)
+x = Dropout(0.5)(x)
+outputs = Dense(num_classes, activation="softmax")(x)
+
+model = Model(inputs=base_model.input, outputs=outputs)
+
+model.compile(optimizer="adam",
+              loss="sparse_categorical_crossentropy",
+              metrics=["accuracy"])
+
+model.summary()
