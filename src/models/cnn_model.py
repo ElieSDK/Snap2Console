@@ -9,7 +9,7 @@ from tensorflow.keras.callbacks import ModelCheckpoint
 
 # Paths
 DATA_DIR = "/home/es/Documents/Project/VG/Medias/Nintendo Famicom (2D Boxes)(Kondorito 1.2)"
-IMG_SIZE = 256  # EfficientNet-B2 compatible
+IMG_SIZE = 260  # EfficientNet-B2 compatible
 
 # Organize images into folders
 '''
@@ -109,8 +109,3 @@ if img is not None:
     print("Predicted game:", pred_class)
 else:
     print(f"Image not found: {img_path}")
-
-
-
-
-# EfficientNet-B2
