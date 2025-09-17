@@ -75,3 +75,39 @@ model.compile(optimizer="adam",
               metrics=["accuracy"])
 
 model.summary()
+
+#Checkpoint
+checkpoint = ModelCheckpoint("best_efficientnetb2.h5", 
+                             monitor="val_accuracy",
+                             save_best_only=True, 
+                             mode="max", verbose=1)
+
+#Train
+history = model.fit(
+    train_images, train_labels,
+    epochs=10,
+    batch_size=32,
+    validation_data=(test_images, test_labels),
+    callbacks=[checkpoint]
+)
+
+#Evaluate
+best_model = load_model("best_efficientnetb2.h5")
+test_loss, test_acc = best_model.evaluate(test_images, test_labels)
+print("Test loss:", test_loss)
+print("Test accuracy:", test_acc)
+
+#Preediction
+img_path = "test_cover.jpg"
+img = cv2.imread(img_path)
+if img is not None:
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    img = cv2.resize(img, (IMG_SIZE, IMG_SIZE))
+    img = preprocess_input(img)  # must match training
+    img = np.expand_dims(img, axis=0)
+    
+    pred = best_model.predict(img)
+    pred_class = classes[np.argmax(pred)]
+    print("Predicted game:", pred_class)
+else:
+    print(f"Image not found: {img_path}")
