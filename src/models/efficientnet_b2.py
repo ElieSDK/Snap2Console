@@ -32,7 +32,7 @@ for file_path in glob.glob(os.path.join(DATA_DIR, '*.*')):
 images = []
 labels = []
 
-# 🔹 Define classes and mapping
+# Define classes and mapping
 classes = sorted(os.listdir(DATA_DIR))  # Each folder is a class
 class_dict = {cls_name: idx for idx, cls_name in enumerate(classes)}
 
