@@ -217,8 +217,8 @@ for img_path, console_idx, game_label in tqdm(zip(test_ds.dataset.images, test_d
 # Metrics
 console_acc = accuracy_score(y_true_console, y_pred_console)
 game_acc = accuracy_score(y_true_game, y_pred_game)
-print(f"\n📊 Test Console Accuracy: {console_acc*100:.2f}%")
-print(f"📊 Test Game Accuracy: {game_acc*100:.2f}%")
+print(f"\nTest Console Accuracy: {console_acc*100:.2f}%")
+print(f"Test Game Accuracy: {game_acc*100:.2f}%")
 
 
 with open("console_galleries.pkl", "wb") as f:
