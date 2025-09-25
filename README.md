@@ -1,4 +1,4 @@
-# Video Game Photo Recognition
+# Snap2Console
 
 ## Folder Structure
 
