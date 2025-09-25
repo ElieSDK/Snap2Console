@@ -93,7 +93,7 @@ The model performs very well on major consoles like PSX and SS, with perfect rec
 
 ## Game Recognition
 
-For game recognition, we built **console galleries** using k-NN per console.
+For game recognition, we built a **console galleries** using k-NN per console.
 
 - Test results:
   - Console Accuracy: **98.63%**
@@ -127,8 +127,8 @@ The trained models are available here: [Hugging Face Repository](https://hugging
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/ElieSDK/Video_Game_Photo_Recognition.git
-cd Video_Game_Photo_Recognition
+git clone https://github.com/ElieSDK/Snap2Console.git
+cd Snap2Console
 ```
 
 ### 2. Install Dependencies
