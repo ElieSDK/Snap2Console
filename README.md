@@ -1,5 +1,18 @@
 # Snap2Console
 
+## The Challenge
+
+<p align="center">
+  <img src="https://github.com/ElieSDK/Video_Game_Photo_Recognition/blob/main/figures/game.png" alt="Game Image" />
+</p>
+
+
+I took this picture at Book-Off. Video game covers aren’t always easy to recognize. Titles are often in Japanese, stickers can cover parts of the artwork, and sometimes the Japanese and Western covers look completely different.
+
+The goal of this project was to build a model capable of identifying the game from any uploaded image and providing detailed information about it.
+
+---
+
 ## Folder Structure
 
 ```
@@ -18,20 +31,8 @@ Video_Game_Photo_Recognition/
 │
 ├─ requirements.txt       # Python dependencies
 └─ README.md
+
 ```
-
-## The Challenge
-
-<p align="center">
-  <img src="https://github.com/ElieSDK/Video_Game_Photo_Recognition/blob/main/figures/game.png" alt="Game Image" />
-</p>
-
-
-I took this picture at Book-Off. Video game covers aren’t always easy to recognize. Titles are often in Japanese, stickers can cover parts of the artwork, and sometimes the Japanese and Western covers look completely different.
-
-The goal of this project is to create an interface where you can upload any game image, and the system identifies the game and provides detailed information immediately.
-
----
 
 ## Input Data
 
