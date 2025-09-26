@@ -20,13 +20,13 @@ Video_Game_Photo_Recognition/
 │
 ├─ data/                  # Database for EDA
 │
-├─ notebooks/             # Jupyter notebooks for EDA
+├─ notebooks/             # Jupyter notebook for EDA
 │   └─ eda.ipynb
 │
 ├─ scripts/               # Python scripts for training and evaluation
 │   └─ train.py
 │
-├─ figures/               # Visualizations (e.g., confusion matrix)
+├─ figures/               # Visualizations
 │   └─ confusion_matrix_b2.png
 │
 ├─ requirements.txt       # Python dependencies
