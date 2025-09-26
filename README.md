@@ -111,7 +111,7 @@ For game recognition, we built a **console galleries** using k-NN per console.
 
 ## Models
 
-The trained models are available here: [Hugging Face Repository](https://huggingface.co/esdk/vg_b2/tree/main)
+I have uploaded the trained models here for download: [Hugging Face Repository](https://huggingface.co/esdk/vg_b2/tree/main)
 
 - `best_console_b2.pth` → Trained EfficientNet_B2 model for console recognition.
 - `console_galleries.pkl` → k-NN embeddings for game recognition, organized per console.
